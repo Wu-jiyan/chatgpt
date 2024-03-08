@@ -81,9 +81,9 @@ func CreateChatCompletions(c *gin.Context) {
 		responsePart, continueInfo = Handler(c, response, originalRequest.Stream, id, model)
 		fullResponse += responsePart
 		continueSignal = os.Getenv("CONTINUE_SIGNAL")
-		if continueInfo == nil || continueSignal == "" {
-			break
-		}
+		//if continueInfo == nil || continueSignal == "" {
+		//	break
+		//}
 		println("Continuing conversation")
 		translatedRequest.Messages = nil
 		translatedRequest.Action = "continue"
